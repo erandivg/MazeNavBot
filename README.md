@@ -3,7 +3,9 @@
 This project was developed to demonstrate basic knowledge of **ROS 2 Jazzy**.  
 It consists of a simple maze-like world built in **Gazebo Harmonic**, where a **TurtleBot3** navigates autonomously using a **LiDAR sensor**. The robot moves forward, detecting walls and navigating the environment based on the sensor data.
 
-
+<p align="center">
+  <img src="image.png" alt="mundo" />
+</p>
 
 ## 🧪 Technologies Used
 - ROS 2 Jazzy

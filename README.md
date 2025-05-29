@@ -50,7 +50,7 @@ You need to install the TurtleBot3 packages in order to use the TurtleBot in Gaz
     ros2 launch turtlebot3_gazebo robot_laberinto.launch.py
     ```  
 
-4. **In another terminal**, before starting the wall-following behavior, it is necessary to make the robot perform a rotation so that it can detect the closest wall and begin navigation properly.
+4. **In a second terminal**, before starting the wall-following behavior, it is necessary to make the robot perform a rotation so that it can detect the closest wall and begin navigation properly.
 
     ```bash
     source /opt/ros/jazzy/setup.bash
@@ -58,12 +58,26 @@ You need to install the TurtleBot3 packages in order to use the TurtleBot in Gaz
     ros2 run move_scan wall_server
     ```
     
-5. Third terminal
+5. **Third terminal**
     ```bash
     source /opt/ros/jazzy/setup.bash
     source install/setup.bash
     ros2 service call /find_wall service_pkg/srv/FindWall {}
     ```
   Result
+  
+  <p align="center">
+    <img src="task_1.gif" alt="Task1" />
+  </p>
 
   Once this first task is completed, close the program running in step 4.
+
+6. **Run task 2** in the second terminal
+    ```bash
+    source /opt/ros/jazzy/setup.bash
+    source install/setup.bash
+    ros2 launch move_scan start_following.launch.py
+    ```
+  <p align="center">
+    <img src="task_2.gif" alt="Task2" />
+  </p>

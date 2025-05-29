@@ -64,4 +64,6 @@ You need to install the TurtleBot3 packages in order to use the TurtleBot in Gaz
     source install/setup.bash
     ros2 service call /find_wall service_pkg/srv/FindWall {}
     ```
+  Result
 
+  Once this first task is completed, close the program running in step 4.

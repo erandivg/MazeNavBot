@@ -1,10 +1,10 @@
 # 🧭 MazeNavBot
 
 This project was developed to demonstrate basic knowledge of **ROS 2 Jazzy**.  
-It consists of a simple maze-like world built in **Gazebo Harmonic**, where a **TurtleBot3** navigates autonomously using a **LiDAR sensor**. The robot moves forward, detecting walls and navigating the environment based on the sensor data.
+It features a simple maze-like world built in **Gazebo Harmonic**, where a **TurtleBot3** navigates autonomously using a **LiDAR sensor**. The robot moves forward, detects walls, and navigates the environment based on sensor data.
 
 <p align="center">
-  <img src="image.png" alt="mundo" />
+  <img src="image.png" alt="Maze World" />
 </p>
 
 ## 🧪 Technologies Used
@@ -17,67 +17,76 @@ It consists of a simple maze-like world built in **Gazebo Harmonic**, where a **
 ## 🚀 Features
 The robot:
 - Detects walls using the LiDAR sensor.
-- Follows walls 
+- Follows walls.
 - Navigates through a maze-like environment.
 
 ---
 
-# **How to Run the Program**  
+# 📦 How to Run the Program
 
-## **Prerequisites**  
+## ✅ Prerequisites
 
-You need to install the TurtleBot3 packages in order to use the TurtleBot in Gazebo:
+You need to install the TurtleBot3 packages to use the TurtleBot in Gazebo:
 - [TurtleBot3 Quick Start Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
 
 > **Note:**  
 > The custom world used in this project is located inside the `turtlebot3_simulations` package.  
-> It is necessary to download this package, included in this repository in order to run the simulation properly.
+> This package is included in the repository and must be downloaded to run the simulation correctly.
 
-### Setup Instructions  
+---
 
-1. **Download the source code** and place it inside a ROS workspace.
-2. **Compile the workspace** by running:  
+## 🔧 Setup Instructions
+
+1. **Download the source code** and place it inside a ROS 2 workspace.
+2. **Build the workspace**:
 
     ```bash
     colcon build
     ```
-3. **Run the program** with the following commands:  
+
+3. **Run the simulation**:
 
     ```bash
     source /opt/ros/jazzy/setup.bash
     source install/setup.bash
     export TURTLEBOT3_MODEL=waffle
     ros2 launch turtlebot3_gazebo robot_laberinto.launch.py
-    ```  
+    ```
 
-4. **In a second terminal**, before starting the wall-following behavior, it is necessary to make the robot perform a rotation so that it can detect the closest wall and begin navigation properly.
+4. **In a second terminal**, rotate the robot before starting the wall-following behavior. This helps it detect the closest wall and begin navigation correctly.
 
     ```bash
     source /opt/ros/jazzy/setup.bash
     source install/setup.bash
     ros2 run move_scan wall_server
     ```
-    
-5. **Third terminal**
+
+5. **In a third terminal**, call the service to start the initial rotation:
+
     ```bash
     source /opt/ros/jazzy/setup.bash
     source install/setup.bash
     ros2 service call /find_wall service_pkg/srv/FindWall {}
     ```
-  Result
-  
-  <p align="center">
-    <img src="task_1.gif" alt="Task1" />
-  </p>
 
-  Once this first task is completed, close the program running in step 4.
+    **Result:**
 
-6. **Run task 2** in the second terminal
+    <p align="center">
+      <img src="task_1.gif" alt="Task 1 Result" />
+    </p>
+
+    After completing this task, you can stop the program from step 4.
+
+6. **Start Task 2 (wall following)** in the second terminal:
+
     ```bash
     source /opt/ros/jazzy/setup.bash
     source install/setup.bash
     ros2 launch move_scan start_following.launch.py
     ```
-  <p align="center">
-    <img src="task_2.gif" alt="Task2" />
-  </p>
+
+    **Result:**
+
+    <p align="center">
+      <img src="task_2.gif" alt="Task 2 Result" />
+    </p>

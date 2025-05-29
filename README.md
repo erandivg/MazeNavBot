@@ -17,7 +17,7 @@ It consists of a simple maze-like world built in **Gazebo Harmonic**, where a **
 ## 🚀 Features
 The robot:
 - Detects walls using the LiDAR sensor.
-- Follows walls or avoids obstacles based on implemented logic.
+- Follows walls 
 - Navigates through a maze-like environment.
 
 ---
